@@ -1,17 +1,35 @@
-function App() {
-  return (
-    <main className="flex min-h-svh flex-col items-center justify-center gap-4 bg-slate-50 p-8 text-slate-900">
-      <h1 className="text-5xl font-bold tracking-tight">
-        Task<span className="text-indigo-600">Flow</span>
-      </h1>
-      <p className="text-lg text-slate-600">
-        React + TypeScript + Tailwind CSS — ready to build.
-      </p>
-      <span className="mt-2 rounded-full bg-indigo-600 px-4 py-2 text-sm font-medium text-white">
-        v0.0.1
-      </span>
-    </main>
-  )
-}
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { AppShell } from "./components/layout/AppShell";
+import { DashboardPage } from "./pages/Dashboard";
+import { NotFoundPage } from "./pages/NotFound";
+import { NotificationsPage } from "./pages/Notifications";
+import { ProjectsPage } from "./pages/Projects";
+import { SettingsPage } from "./pages/Settings";
+import { TasksPage } from "./pages/Tasks";
+import { TeamPage } from "./pages/Team";
 
-export default App
+/**
+ * The route table.
+ *
+ * `AppShell` is a layout route, so the sidebar and topbar stay mounted while
+ * pages swap underneath them. The task detail view is a child *path* of
+ * `/tasks` rather than a sibling route — the page reads `:taskId` from the URL
+ * itself, which keeps the filters the user set alive while a task is open.
+ */
+export default function App() {
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route element={<AppShell />}>
+          <Route index element={<DashboardPage />} />
+          <Route path="projects" element={<ProjectsPage />} />
+          <Route path="tasks/*" element={<TasksPage />} />
+          <Route path="team" element={<TeamPage />} />
+          <Route path="notifications" element={<NotificationsPage />} />
+          <Route path="settings" element={<SettingsPage />} />
+          <Route path="*" element={<NotFoundPage />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
+  );
+}

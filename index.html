@@ -12,6 +12,54 @@
       href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@100..900&display=swap"
       rel="stylesheet"
     />
+
+    <!--
+      Paints the page ground before the bundle loads. Kept in sync by hand with
+      `--app-bg` in `src/styles/index.css` — a variable can't be read before the
+      stylesheet exists, and getting this wrong is a full-screen flash.
+    -->
+    <style>
+      html {
+        background-color: #f5f7fb;
+        color-scheme: light;
+      }
+      html.dark {
+        background-color: #070a12;
+        color-scheme: dark;
+      }
+    </style>
+
+    <!--
+      Applies the stored theme before first paint so dark mode never flashes
+      white. Mirrors `AppearanceProvider`; that provider re-applies the same
+      attributes on mount and owns them from then on.
+    -->
+    <script>
+      (function () {
+        try {
+          var read = function (key) {
+            var raw = window.localStorage.getItem(key);
+            return raw === null ? null : JSON.parse(raw);
+          };
+
+          var preference = read("taskflow:theme");
+          var resolved =
+            preference === "light" || preference === "dark"
+              ? preference
+              : window.matchMedia("(prefers-color-scheme: dark)").matches
+                ? "dark"
+                : "light";
+
+          var root = document.documentElement;
+          root.classList.toggle("dark", resolved === "dark");
+          root.dataset.theme = resolved;
+          root.dataset.density =
+            read("taskflow:density") === "compact" ? "compact" : "comfortable";
+        } catch (error) {
+          // Storage blocked — the defaults the app ships with are already correct.
+        }
+      })();
+    </script>
   </head>
   <body>
     <div id="root"></div>
