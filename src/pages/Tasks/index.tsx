@@ -5,12 +5,12 @@ import {
   ACTION_LABELS,
   SORT_LABELS,
   TASK_PAGE_LABELS,
-} from "../../constants/labels";
-import { SEARCH_DEBOUNCE_MS } from "../../constants/config";
-import { useAppShell } from "../../hooks/useAppShell";
-import { useDebouncedValue } from "../../hooks/useDisclosure";
-import { useTasks } from "../../hooks/useTasks";
-import { useWorkspace } from "../../hooks/useWorkspace";
+} from "../../shared/constants/labels";
+import { SEARCH_DEBOUNCE_MS } from "../../shared/constants/config";
+import { useAppShell } from "../../shared/hooks/useAppShell";
+import { useDebouncedValue } from "../../shared/hooks/useDisclosure";
+import { useTasks } from "../../shared/hooks/useTasks";
+import { useWorkspace } from "../../shared/hooks/useWorkspace";
 import type { ID, TaskFilters, TaskSort, TaskSortKey } from "../../types";
 import {
   applyQuickPreset,
@@ -18,20 +18,20 @@ import {
   DEFAULT_SORT,
   filterAndSortTasks,
   hasActiveFilters,
-} from "../../utils/filter";
-import type { QuickPreset } from "../../utils/filter";
-import { toPersianDigits } from "../../utils/text";
-import { PageHeader } from "../../components/layout/PageHeader";
-import { PageGuard } from "../../components/layout/PageGuard";
-import { TaskDetailDrawer } from "../../components/task/TaskDetailDrawer";
-import { TaskFiltersBar } from "../../components/task/TaskFiltersBar";
-import { TaskList } from "../../components/task/TaskList";
-import { Button } from "../../components/ui/Button";
-import { IconButton } from "../../components/ui/IconButton";
-import { Menu } from "../../components/ui/Menu";
-import { SearchInput } from "../../components/ui/SearchInput";
-import { Skeleton } from "../../components/ui/Skeleton";
-import { Tooltip } from "../../components/ui/Tooltip";
+} from "../../shared/utils/filter";
+import type { QuickPreset } from "../../shared/utils/filter";
+import { toPersianDigits } from "../../shared/utils/text";
+import { PageHeader } from "../../shared/components/layout/PageHeader";
+import { PageGuard } from "../../shared/components/layout/PageGuard";
+import { TaskDetailDrawer } from "../../features/tasks/components/TaskDetailDrawer";
+import { TaskFiltersBar } from "../../features/tasks/components/TaskFiltersBar";
+import { TaskList } from "../../features/tasks/components/TaskList";
+import { Button } from "../../shared/components/ui/Button";
+import { IconButton } from "../../shared/components/ui/IconButton";
+import { Menu } from "../../shared/components/ui/Menu";
+import { SearchInput } from "../../shared/components/ui/SearchInput";
+import { Skeleton } from "../../shared/components/ui/Skeleton";
+import { Tooltip } from "../../shared/components/ui/Tooltip";
 
 const SORT_OPTIONS: { key: TaskSortKey; label: string }[] = [
   { key: "dueDate", label: SORT_LABELS.dueDate },

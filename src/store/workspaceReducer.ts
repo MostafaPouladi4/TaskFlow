@@ -4,7 +4,7 @@ import type {
   Comment,
   ID,
   Task,
-} from "../types";
+} from "../../shared/types";
 import type { WorkspaceSnapshot } from "../data";
 import type { MutationSideEffects } from "./workspaceMutations";
 

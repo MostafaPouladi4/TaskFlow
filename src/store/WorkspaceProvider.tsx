@@ -7,21 +7,21 @@ import {
   useState,
   type ReactNode,
 } from "react";
-import { CURRENT_USER_ID } from "../constants/config";
-import { ERROR_LABELS, TOAST_LABELS } from "../constants/labels";
+import { CURRENT_USER_ID } from "../shared/constants/config";
+import { ERROR_LABELS, TOAST_LABELS } from "../shared/constants/labels";
 import { buildIndex, resolveTasks, type WorkspaceSnapshot } from "../data";
-import { fetchWorkspace, persist, remove } from "../data/api";
+import { fetchWorkspace, persist, remove } from "../services/api";
 import {
   clearStoredWorkspace,
   readStoredWorkspace,
   toSnapshot,
   writeStoredWorkspace,
-} from "../data/persistence";
-import { USERS } from "../data/users";
-import type { ApiResponse } from "../types";
-import type { Comment, ID, Task, TaskDraft, TaskPatch, TaskStatus } from "../types";
-import { createId, nextTaskNumber, seedTaskCounter } from "../utils/id";
-import { useToast } from "../hooks/useToast";
+} from "../services/persistence";
+import { USERS } from "../services/users";
+import type { ApiResponse } from "../../shared/types";
+import type { Comment, ID, Task, TaskDraft, TaskPatch, TaskStatus } from "../../shared/types";
+import { createId, nextTaskNumber, seedTaskCounter } from "../shared/utils/id";
+import { useToast } from "../shared/hooks/useToast";
 import {
   onCommentCreated,
   onTaskCreated,

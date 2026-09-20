@@ -1,18 +1,18 @@
 import { useCallback, useMemo, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { CheckCheck } from "lucide-react";
-import { NOTIFICATION_LABELS } from "../../constants/labels";
-import { useInboxNotifications, useLookup } from "../../hooks/useTasks";
-import { useWorkspace } from "../../hooks/useWorkspace";
+import { NOTIFICATION_LABELS } from "../../shared/constants/labels";
+import { useInboxNotifications, useLookup } from "../../shared/hooks/useTasks";
+import { useWorkspace } from "../../shared/hooks/useWorkspace";
 import type { AppNotification } from "../../types";
-import { formatNumber } from "../../utils/text";
-import { PageHeader } from "../../components/layout/PageHeader";
-import { PageGuard } from "../../components/layout/PageGuard";
-import { NotificationList } from "../../components/notifications/NotificationList";
-import { Button } from "../../components/ui/Button";
-import { Card } from "../../components/ui/Card";
-import { SegmentedControl } from "../../components/ui/SegmentedControl";
-import { Skeleton } from "../../components/ui/Skeleton";
+import { formatNumber } from "../../shared/utils/text";
+import { PageHeader } from "../../shared/components/layout/PageHeader";
+import { PageGuard } from "../../shared/components/layout/PageGuard";
+import { NotificationList } from "../../features/notifications/components/NotificationList";
+import { Button } from "../../shared/components/ui/Button";
+import { Card } from "../../shared/components/ui/Card";
+import { SegmentedControl } from "../../shared/components/ui/SegmentedControl";
+import { Skeleton } from "../../shared/components/ui/Skeleton";
 
 type InboxFilter = "all" | "unread";
 

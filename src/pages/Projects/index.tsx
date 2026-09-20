@@ -3,21 +3,21 @@ import {
   PROJECT_LABELS,
   PROJECT_STATUS_LABELS,
   TASK_PAGE_LABELS,
-} from "../../constants/labels";
-import { PROJECT_TONES } from "../../constants/tones";
-import { useProjectsWithProgress } from "../../hooks/useTasks";
+} from "../../shared/constants/labels";
+import { PROJECT_TONES } from "../../shared/constants/tones";
+import { useProjectsWithProgress } from "../../shared/hooks/useTasks";
 import type { ProjectWithProgress } from "../../types";
-import { cn } from "../../utils/cn";
-import { formatJalaliShort } from "../../utils/date";
-import { formatNumber, formatPercent } from "../../utils/text";
-import { PageHeader } from "../../components/layout/PageHeader";
-import { PageGuard } from "../../components/layout/PageGuard";
-import { Avatar } from "../../components/ui/Avatar";
-import { Card, CardBody, CardHeader } from "../../components/ui/Card";
-import { ProgressBar } from "../../components/ui/ProgressBar";
-import { Skeleton } from "../../components/ui/Skeleton";
-import { EmptyState } from "../../components/ui/States";
-import { useWorkspace } from "../../hooks/useWorkspace";
+import { cn } from "../../shared/utils/cn";
+import { formatJalaliShort } from "../../shared/utils/date";
+import { formatNumber, formatPercent } from "../../shared/utils/text";
+import { PageHeader } from "../../shared/components/layout/PageHeader";
+import { PageGuard } from "../../shared/components/layout/PageGuard";
+import { Avatar } from "../../shared/components/ui/Avatar";
+import { Card, CardBody, CardHeader } from "../../shared/components/ui/Card";
+import { ProgressBar } from "../../shared/components/ui/ProgressBar";
+import { Skeleton } from "../../shared/components/ui/Skeleton";
+import { EmptyState } from "../../shared/components/ui/States";
+import { useWorkspace } from "../../shared/hooks/useWorkspace";
 
 const STATUS_CHIP_CLASSES: Record<ProjectWithProgress["status"], string> = {
   active: "bg-brand-500/10 text-brand-700 dark:text-brand-300",

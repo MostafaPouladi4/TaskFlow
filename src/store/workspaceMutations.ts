@@ -4,9 +4,9 @@ import type {
   Comment,
   ID,
   Task,
-} from "../types";
-import { extractMentionIds } from "../utils/mention";
-import { uniqueBy } from "../utils/collection";
+} from "../../shared/types";
+import { extractMentionIds } from "../shared/utils/mention";
+import { uniqueBy } from "../shared/utils/collection";
 
 /**
  * Pure builders that turn a user intent into the side records it implies —

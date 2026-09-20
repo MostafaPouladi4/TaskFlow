@@ -1,16 +1,16 @@
 import { useCallback } from "react";
 import { useNavigate } from "react-router-dom";
-import { ERROR_LABELS } from "../../constants/labels";
-import { useAppShell } from "../../hooks/useAppShell";
+import { ERROR_LABELS } from "../../shared/constants/labels";
+import { useAppShell } from "../../shared/hooks/useAppShell";
 import type { ID } from "../../types";
-import { ActivityFeed } from "../../components/dashboard/ActivityFeed";
-import { GreetingHeader } from "../../components/dashboard/GreetingHeader";
-import { ProgressOverview } from "../../components/dashboard/ProgressOverview";
-import { ProjectsOverview } from "../../components/dashboard/ProjectsOverview";
-import { StatsGrid } from "../../components/dashboard/StatsGrid";
-import { UpcomingTasks } from "../../components/dashboard/UpcomingTasks";
-import { PageGuard } from "../../components/layout/PageGuard";
-import { Skeleton, SkeletonStats } from "../../components/ui/Skeleton";
+import { ActivityFeed } from "../../features/dashboard/components/ActivityFeed";
+import { GreetingHeader } from "../../features/dashboard/components/GreetingHeader";
+import { ProgressOverview } from "../../features/dashboard/components/ProgressOverview";
+import { ProjectsOverview } from "../../features/dashboard/components/ProjectsOverview";
+import { StatsGrid } from "../../features/dashboard/components/StatsGrid";
+import { UpcomingTasks } from "../../features/dashboard/components/UpcomingTasks";
+import { PageGuard } from "../../shared/components/layout/PageGuard";
+import { Skeleton, SkeletonStats } from "../../shared/components/ui/Skeleton";
 
 /** Mirrors the real grid so the layout does not jump when data lands. */
 function DashboardSkeleton() {

@@ -10,25 +10,25 @@ import {
   Rows3,
   Sun,
 } from "lucide-react";
-import { STORAGE_KEYS } from "../../constants/config";
+import { STORAGE_KEYS } from "../../shared/constants/config";
 import {
   ACTION_LABELS,
   NOTIFICATION_LABELS,
   SETTINGS_LABELS,
   USER_ROLE_LABELS,
-} from "../../constants/labels";
-import { useAppearance } from "../../hooks/useAppearance";
+} from "../../shared/constants/labels";
+import { useAppearance } from "../../shared/hooks/useAppearance";
 import type { Density, ThemePreference } from "../../store/appearanceContext";
-import { useLocalStorage } from "../../hooks/useLocalStorage";
-import { useWorkspace } from "../../hooks/useWorkspace";
-import { Card, CardBody, CardHeader } from "../../components/ui/Card";
-import { Avatar } from "../../components/ui/Avatar";
-import { Button } from "../../components/ui/Button";
-import { Checkbox } from "../../components/ui/Checkbox";
-import { ConfirmDialog } from "../../components/ui/ConfirmDialog";
-import { Field, Input } from "../../components/ui/Field";
-import { SegmentedControl } from "../../components/ui/SegmentedControl";
-import { PageHeader } from "../../components/layout/PageHeader";
+import { useLocalStorage } from "../../shared/hooks/useLocalStorage";
+import { useWorkspace } from "../../shared/hooks/useWorkspace";
+import { Card, CardBody, CardHeader } from "../../shared/components/ui/Card";
+import { Avatar } from "../../shared/components/ui/Avatar";
+import { Button } from "../../shared/components/ui/Button";
+import { Checkbox } from "../../shared/components/ui/Checkbox";
+import { ConfirmDialog } from "../../shared/components/ui/ConfirmDialog";
+import { Field, Input } from "../../shared/components/ui/Field";
+import { SegmentedControl } from "../../shared/components/ui/SegmentedControl";
+import { PageHeader } from "../../shared/components/layout/PageHeader";
 
 /* ── Appearance ────────────────────────────────────────────────────────── */
 

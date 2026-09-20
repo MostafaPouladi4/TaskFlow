@@ -1,8 +1,8 @@
 import { useNavigate } from "react-router-dom";
 import { Compass } from "lucide-react";
-import { ERROR_LABELS } from "../constants/labels";
-import { toPersianDigits } from "../utils/text";
-import { Button } from "../components/ui/Button";
+import { ERROR_LABELS } from "../shared/constants/labels";
+import { toPersianDigits } from "../shared/utils/text";
+import { Button } from "../shared/components/ui/Button";
 
 /**
  * The 404.

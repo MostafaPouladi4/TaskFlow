@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useMemo, type ReactNode } from "react";
-import { STORAGE_KEYS } from "../constants/config";
-import { useLocalStorage } from "../hooks/useLocalStorage";
-import { useSystemTheme } from "../hooks/useMediaQuery";
+import { STORAGE_KEYS } from "../shared/constants/config";
+import { useLocalStorage } from "../shared/hooks/useLocalStorage";
+import { useSystemTheme } from "../shared/hooks/useMediaQuery";
 import {
   AppearanceContext,
   type AppearanceContextValue,

@@ -12,7 +12,7 @@ import type {
   TaskStatus,
   TaskWithRelations,
   User,
-} from "../types";
+} from "../../shared/types";
 import type { WorkspaceIndex } from "../data";
 import type { LoadStatus, WorkspaceState } from "./workspaceReducer";
 

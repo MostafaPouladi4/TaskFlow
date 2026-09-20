@@ -6,22 +6,22 @@ import {
   PRESENCE_LABELS,
   TEAM_LABELS,
   USER_ROLE_LABELS,
-} from "../../constants/labels";
-import { useTeamMembers } from "../../hooks/useTasks";
+} from "../../shared/constants/labels";
+import { useTeamMembers } from "../../shared/hooks/useTasks";
 import type { TeamMember } from "../../types";
-import { cn } from "../../utils/cn";
-import { normalize } from "../../utils/search";
-import { formatNumber, formatPercent } from "../../utils/text";
-import { PageHeader } from "../../components/layout/PageHeader";
-import { PageGuard } from "../../components/layout/PageGuard";
-import { Avatar } from "../../components/ui/Avatar";
-import { Card } from "../../components/ui/Card";
-import { DataTable } from "../../components/ui/DataTable";
-import type { DataTableColumn, DataTableSort } from "../../components/ui/DataTable";
-import { ProgressBar } from "../../components/ui/ProgressBar";
-import { SearchInput } from "../../components/ui/SearchInput";
-import { Skeleton } from "../../components/ui/Skeleton";
-import { EmptyState } from "../../components/ui/States";
+import { cn } from "../../shared/utils/cn";
+import { normalize } from "../../shared/utils/search";
+import { formatNumber, formatPercent } from "../../shared/utils/text";
+import { PageHeader } from "../../shared/components/layout/PageHeader";
+import { PageGuard } from "../../shared/components/layout/PageGuard";
+import { Avatar } from "../../shared/components/ui/Avatar";
+import { Card } from "../../shared/components/ui/Card";
+import { DataTable } from "../../shared/components/ui/DataTable";
+import type { DataTableColumn, DataTableSort } from "../../shared/components/ui/DataTable";
+import { ProgressBar } from "../../shared/components/ui/ProgressBar";
+import { SearchInput } from "../../shared/components/ui/SearchInput";
+import { Skeleton } from "../../shared/components/ui/Skeleton";
+import { EmptyState } from "../../shared/components/ui/States";
 
 const PRESENCE_DOT: Record<TeamMember["presence"], string> = {
   online: "bg-emerald-500",

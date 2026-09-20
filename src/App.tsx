@@ -1,5 +1,5 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { AppShell } from "./components/layout/AppShell";
+import { AppShell } from "./features/layout/components/AppShell";
 import { DashboardPage } from "./pages/Dashboard";
 import { NotFoundPage } from "./pages/NotFound";
 import { NotificationsPage } from "./pages/Notifications";

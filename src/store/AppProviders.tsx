@@ -1,5 +1,5 @@
 import type { ReactNode } from "react";
-import { Toaster } from "../components/ui/Toaster";
+import { Toaster } from "../shared/components/ui/Toaster";
 import { AppearanceProvider } from "./AppearanceProvider";
 import { ToastProvider } from "./ToastProvider";
 import { WorkspaceProvider } from "./WorkspaceProvider";
